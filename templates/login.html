@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="centered">
+  <form method="POST" class="form-card">
+    <h2>Bienvenido de vuelta</h2>
+    <p>Inicia sesión para continuar tu experiencia cinematográfica</p>
+    <input type="email" name="email" placeholder="Correo electrónico" required />
+    <input type="password" name="password" placeholder="Contraseña" required />
+    <button type="submit" class="btn orange full">Iniciar sesión</button>
+    <p class="link">¿No tienes cuenta? <a href="{{ url_for('register') }}">Regístrate</a></p>
+  </form>
+</body>
+</html>

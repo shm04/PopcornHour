@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Popcorn Hour</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="centered orange-bg">
+  <div class="landing-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="logo" class="logo">
+    <h1>PopCorn Hour</h1>
+    <h2>Descubre. Califica. Debate.</h2>
+    <p>La plataforma definitiva para cinéfilos. Encuentra tu próxima película favorita, comparte tus opiniones y conecta con otros amantes del cine.</p>
+    <div class="btn-group">
+      <a href="{{ url_for('login') }}" class="btn white">Iniciar sesión</a>
+      <a href="{{ url_for('register') }}" class="btn transparent">Registrarse</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ movie.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px;">
+    <a href="{{ url_for('admin_dashboard') if current_user.role == 'admin' else url_for('dashboard') }}">
+      <button class="btn">⬅ Volver al catálogo</button>
+    </a>
+    <form action="{{ url_for('logout') }}" method="get">
+      <button type="submit" class="btn red">Cerrar sesión</button>
+    </form>
+  </div>
+
+  <div style="max-width: 1000px; margin: 0 auto; background-color: white; padding: 2rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.05); display: flex; gap: 2rem;">
+    <img src="{{ movie.image_url }}" alt="{{ movie.title }}" style="width: 280px; height: auto; border-radius: 10px; object-fit: cover;">
+
+    <div>
+      <h2 style="margin-top: 0;">{{ movie.title }}</h2>
+      <p><span style="font-size: 1.2rem;">⭐</span> <strong>{{ movie.rating or '-' }}</strong></p>
+
+      <h4 style="margin-top: 1.5rem;">Sinopsis</h4>
+      <p style="line-height: 1.6;">{{ movie.description }}</p>
+
+      <p style="margin-top: 1rem; color: #666;">
+        <strong>Año:</strong> {{ movie.year or '---' }}
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

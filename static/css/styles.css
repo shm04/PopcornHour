@@ -1,0 +1,387 @@
+/* static/css/styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f6f2;
+  color: #333;
+}
+
+/* Centering utility */
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Landing page orange gradient background */
+.orange-bg {
+  background: linear-gradient(to right, #f15a24, #f7941e);
+  color: white;
+}
+
+/* Form container */
+.form-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.form-card p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.form-card input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-card .btn.full {
+  width: 100%;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.btn.orange {
+  background-color: #f15a24;
+  color: white;
+}
+
+.btn.orange:hover {
+  background-color: #d64918;
+}
+
+.btn.white {
+  background-color: white;
+  color: #f15a24;
+  border: 2px solid #f15a24;
+}
+
+.btn.transparent {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  margin-left: 10px;
+}
+
+.btn.small {
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+}
+
+/* Landing layout */
+.landing-container {
+  text-align: center;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.landing-container .logo {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.btn-group {
+  margin-top: 2rem;
+}
+
+/* Dashboard */
+.dashboard {
+  padding: 2rem;
+}
+
+.dashboard h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.movie-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.movie-card h3 {
+  margin: 0.2rem 0;
+}
+
+.movie-card .desc {
+  font-size: 0.85rem;
+  color: #666;
+  height: 48px;
+  overflow: hidden;
+}
+
+.link {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Admin Dashboard Table */
+.movie-table {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+.movie-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.movie-table th,
+.movie-table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.movie-table thead {
+  background-color: #f3f4f6;
+}
+
+.movie-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.movie-table img {
+  border-radius: 6px;
+}
+
+/* Admin top bar */
+.admin-dashboard > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Badge de género */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.badge.action {
+  background-color: #ef4444; /* rojo */
+}
+
+.badge.drama {
+  background-color: #a855f7; /* morado */
+}
+
+.badge.scifi {
+  background-color: #3b82f6; /* azul */
+}
+
+.badge.comedy {
+  background-color: #facc15; /* amarillo */
+  color: #333;
+}
+
+.badge.default {
+  background-color: #9ca3af; /* gris */
+}
+
+/* Iconos de acciones */
+td a, td form button {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+td form {
+  display: inline;
+}
+
+
+/* Subir nueva película */
+.upload-form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.upload-form-container h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.upload-form-container p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.upload-form-container label {
+  font-weight: 500;
+  display: block;
+  margin: 12px 0 6px;
+  font-size: 0.95rem;
+}
+
+.upload-form-container input[type="text"],
+.upload-form-container input[type="number"],
+.upload-form-container input[type="url"],
+.upload-form-container textarea,
+.upload-form-container select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.upload-form-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.upload-form-container .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.upload-form-container .form-row.double {
+  grid-template-columns: 1fr 1fr;
+}
+
+.upload-form-container .form-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.upload-form-container .form-footer button {
+  min-width: 140px;
+}
+
+.upload-form-container .char-count {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Upload image box */
+.image-upload-box {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.image-upload-box:hover {
+  border-color: #f15a24;
+}
+
+.image-upload-box img {
+  width: 48px;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+
+
+/* Vista detallada de película */
+.movie-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.movie-detail img {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.movie-detail h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #222;
+}
+
+.movie-detail p {
+  line-height: 1.6;
+  color: #444;
+}
+
+.movie-detail .meta {
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.movie-detail .meta strong {
+  font-weight: 600;
+}

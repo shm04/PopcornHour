@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel de Moderación</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="admin-dashboard">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px;">
+    <div>
+      <h2>Panel de Moderación</h2>
+      <p style="margin-top: -10px;">Bienvenido, <strong>{{ current_user.name }}</strong></p>
+    </div>
+    <form action="{{ url_for('logout') }}" method="get">
+      <button type="submit" class="btn red">Cerrar sesión</button>
+    </form>
+  </div>
+
+  <div style="margin: 0 20px;">
+    <a href="{{ url_for('add_movie') }}">
+      <button class="btn orange">+ Agregar nueva película</button>
+    </a>
+  </div>
+
+  <div class="movie-table" style="margin: 20px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Película</th>
+          <th>Año</th>
+          <th>Calificación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for movie in movies %}
+        <tr>
+          <td>
+            <div style="display: flex; align-items: center;">
+              <img src="{{ movie.image_url }}" alt="{{ movie.title }}" width="40" style="margin-right: 10px;">
+              <div>
+                <strong>{{ movie.title }}</strong>
+              </div>
+            </div>
+          </td>
+          <td>{{ movie.year or '---' }}</td>
+          <td>⭐ {{ movie.rating or '-' }}</td>
+          <td>
+            <a href="{{ url_for('edit_movie', movie_id=movie.id) }}" title="Editar">✏️</a>
+            <form action="{{ url_for('delete_movie', movie_id=movie.id) }}" method="POST" style="display:inline;">
+              <button type="submit" onclick="return confirm('¿Eliminar esta película?')" title="Eliminar">🗑️</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
