@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registrarse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="centered">
+  <form method="POST" class="form-card">
+    <h2>Crear cuenta</h2>
+    <p>Únete a la comunidad de cinéfilos</p>
+    <input type="text" name="name" placeholder="Tu nombre completo" required />
+    <input type="email" name="email" placeholder="tu@email.com" required />
+    <input type="password" name="password" placeholder="Mínimo 8 caracteres" required />
+    <input type="password" name="confirm" placeholder="Confirma tu contraseña" required />
+
+    <!-- Selector de rol (solo si quieres que lo elijan) -->
+    <select name="role" required>
+      <option value="">Selecciona un rol</option>
+      <option value="user">Usuario</option>
+      <option value="admin">Administrador</option>
+    </select>
+
+    <button type="submit" class="btn orange full">Registrarse</button>
+  </form>
+</body>
+</html>

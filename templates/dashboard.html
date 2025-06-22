@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body class="dashboard">
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+      "
+    >
+      <div>
+        <p style="font-size: 1.1rem">
+          👋 Bienvenido, <strong>{{ current_user.name }}</strong>
+        </p>
+      </div>
+      <form action="{{ url_for('logout') }}" method="get">
+        <button type="submit" class="btn red">Cerrar sesión</button>
+      </form>
+    </div>
+
+    <h2>Catálogo de Películas</h2>
+    <div class="movie-grid">
+      {% for movie in movies %}
+      <div class="movie-card">
+        <img src="{{ movie.image_url }}" alt="{{ movie.title }}" />
+        <h3>{{ movie.title }}</h3>
+        <p>
+          ⭐ {{ movie.rating or '-' }} &nbsp;&nbsp; 📅 {{ movie.year or '---' }}
+        </p>
+        <p class="desc">{{ movie.description }}</p>
+        <a href="{{ url_for('view_movie', id=movie.id) }}">
+          <button class="btn orange small">Ver más</button>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
