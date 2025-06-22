@@ -98,7 +98,7 @@ popcornhour/
 
 ## 🧠 Autor
 
-Desarrollado por **[Tu Nombre]**  
-🔗 GitHub: [github.com/tuusuario](https://github.com/tuusuario)
+Desarrollado por **Sebastian Hernandez**  
+🔗 GitHub: [github.com/shm04](https://github.com/shm04)
 
 ---
